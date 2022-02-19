@@ -28,14 +28,15 @@
 <script>
   'use strict';
 
-  const userNub = prompt('Введите любое число:')
-
-  const getHundreds = Math.floor(userNub / 100);
-  const getTens = Math.floor(userNub / 10);
-  let remainder = userNub % 100;
+  const
+    userNub = prompt('Введите любое число:'),
+    getHundreds = Math.floor(userNub / 100),
+    getRemainder = userNub % 100,
+    getTens = Math.floor(getRemainder / 10),
+    getUnit = Math.floor(getRemainder % 10);
 
   console.log(`В числе ${userNub} количество сотен: ${getHundreds},
-  десятков: ${getTens}, единиц: 3`, remainder)
+десятков: ${getTens}, единиц: `, getUnit);
 </script>
 </body>
 </html>
