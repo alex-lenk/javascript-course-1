@@ -30,7 +30,7 @@
 
   const
     userNub = prompt('Введите любое число:'),
-    getHundreds = Math.floor(userNub / 100),
+    getHundreds = userNub % 10,
     getRemainder = userNub % 100,
     getTens = Math.floor(getRemainder / 10),
     getUnit = Math.floor(getRemainder % 10);
