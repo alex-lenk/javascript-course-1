@@ -22,10 +22,10 @@
 <script>
   'use strict';
 
-  const C = prompt('Какая сейчас температура по Цельсию?');
-  const F = (9 / 5) * C + 32
+  const celsius = prompt('Какая сейчас температура по Цельсию?');
+  const fahrenheit = Math.round((9 / 5) * celsius + 32)
 
-  alert(`Цельсий: ${C}, Фаренгейт: ${F}`);
+  alert(`Цельсий: ${celsius}, Фаренгейт: ${fahrenheit}`);
 </script>
 </body>
 </html>
