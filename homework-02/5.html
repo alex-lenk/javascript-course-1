@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>homework-02 task 5</title>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо скопировать и вставить в данный скрипт все функции из 4 задания.
+Необходимо реализовать функцию:
+mathOperation(arg1, arg2, operation);
+Параметры:
+arg1 - первое число.
+arg2 - второе число.
+operation - строка, которая содержит один символ из: "+", "-", "*", "/".
+Функция mathOperation должна вернуть результат операции, который был передан в
+параметр operation для двух первых аргументов (arg1 и arg2).
+Функция mathOperation должна использовать для вычисления функции из 4 задания.
+
+Примеры вызова функции:
+console.log(mathOperation(5, 3, "+")); // 8
+console.log(mathOperation(5, 3, ":)")); // NaN
+
+Функции mathOperation всегда передаются корректные числа, проверки на NaN,
+Infinity делать не нужно, однако, в случае если был передан некорректный
+аргумент в параметр operation, необходимо вернуть NaN.
+
+Необходимо для всех функций прописать комментарии jsdoc https://jsdoc.app/.
+-->
+<script>
+  'use strict';
+
+  console.log(mathOperation(5, 3, "+")); // 8
+
+  /*
+   * функция использует другие математические, ранее объявленные функции,
+   * в зависимости от условия передаваемого ей математического аргумента
+   * `operation`.
+   */
+  function mathOperation(num1, num2, operation) {
+    if (operation === '+') {
+      return getSum(num1, num2);
+    } else if (operation === '-') {
+      return getDifference(num1, num2);
+    } else if (operation === '*') {
+      return getMultiplied(num1, num2);
+    } else if (operation === '/' || operation === ':') {
+      return getDivision(num1, num2);
+    } else {
+      return NaN;
+    }
+  }
+
+  // Получаем выражение сумм
+  function getSum(a, b) {
+    return a + b;
+  }
+
+  // Получаем разность чисел `a` и `b`
+  function getDifference(a, b) {
+    if (a > b) {
+      return a - b;
+    } else if (a < b) {
+      return b - a;
+    } else {
+      return 0;
+    }
+  }
+
+  // Получаем произведение чисел `a` * `b`.
+  function getMultiplied(a, b) {
+    return a * b;
+  }
+
+  // Получаем деление чисел `a` и `b`.
+  function getDivision(a, b) {
+    return a / b;
+  }
+</script>
+</body>
+</html>
