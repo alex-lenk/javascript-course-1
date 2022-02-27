@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework-03 task 1</title>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо с помощью цикла for вывести следующие 11 строк в консоль:
+0 – это ноль
+1 – нечетное число
+2 – четное число
+3 – нечетное число
+…
+10 – четное число
+-->
+<script>
+  'use strict';
+
+
+  for (let i = 0; i <= 11; i++) {
+    if (i === 0) {
+      console.log(i, 'это ноль');
+    } else if (Math.floor(i / 2) === i / 2) {
+      console.log(i, 'четное');
+    } else {
+      console.log(i, 'не четное');
+    }
+  }
+</script>
+</body>
+</html>

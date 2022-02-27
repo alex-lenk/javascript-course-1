@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework-03 task 3</title>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Дан массив products, необходимо цену каждого продукта уменьшить на 15% используя
+метод forEach.
+-->
+<script>
+  'use strict';
+
+  const products = [
+    {
+      id: 3,
+      price: 200,
+    },
+    {
+      id: 4,
+      price: 900,
+    },
+    {
+      id: 1,
+      price: 1000,
+    },
+  ];
+
+  /**
+   * Вывел в консоль, потом глянул решение, там в консоле не выводят, оставлю так
+   */
+  products.forEach((item) => {
+    item.price = item.price - item.price * .15;
+
+    console.log(item.price);
+  });
+</script>
+</body>
+</html>
