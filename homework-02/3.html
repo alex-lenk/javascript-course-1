@@ -21,18 +21,15 @@
 <script>
   'use strict';
 
-  const
-    a = 5,
-    b = 1;
+  const a = -1, b = 1;
 
   if (a > 0 && b > 0) {
-    console.log(a - b);
+    console.log(1, a - b);
   } else if (a < 0 && b < 0) {
-    console.log(a * b);
-  } else if (a !== b) {
-    console.log(a + b);
+    console.log(2, a * b);
+  } else if (a * b < 0) {
+    console.log(3, a + b);
   }
-
 </script>
 </body>
 </html>

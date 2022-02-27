@@ -32,12 +32,17 @@ Infinity делать не нужно, однако, в случае если б
 <script>
   'use strict';
 
-  console.log(mathOperation(5, 3, "+")); // 8
+  console.log(mathOperation(5, 3, "+"));
 
-  /*
-   * функция использует другие математические, ранее объявленные функции,
-   * в зависимости от условия передаваемого ей математического аргумента
-   * `operation`.
+
+  /**
+   * @function функция использует математические, ранее объявленные функции
+   * для вычисления
+   * @param num1 - первое число
+   * @param num2 - второе число
+   * @param operation - оператор: '+', '-' '*', '/'
+   * @returns {number} - результат операции над переданными двумя числами
+   * третьим оператором.
    */
   function mathOperation(num1, num2, operation) {
     if (operation === '+') {
@@ -48,17 +53,29 @@ Infinity делать не нужно, однако, в случае если б
       return getMultiplied(num1, num2);
     } else if (operation === '/' || operation === ':') {
       return getDivision(num1, num2);
-    } else {
-      return NaN;
     }
+
+    return NaN;
   }
 
-  // Получаем выражение сумм
+
+  /**
+   * @function Получаем выражение сумм
+   * @param {number} a - первое число
+   * @param {number} b - второе число
+   * @returns {number} - выражение числе a + b
+   */
   function getSum(a, b) {
     return a + b;
   }
 
-  // Получаем разность чисел `a` и `b`
+
+  /**
+   * @function Получаем разность чисел
+   * @param {number} a - первое число
+   * @param {number} b - второе число
+   * @returns {number} - выражение числе `a` - `b`
+   */
   function getDifference(a, b) {
     if (a > b) {
       return a - b;
@@ -69,12 +86,24 @@ Infinity делать не нужно, однако, в случае если б
     }
   }
 
-  // Получаем произведение чисел `a` * `b`.
+
+  /**
+   * @function получаем произведение чисел
+   * @param {number} a - первое число
+   * @param {number} b - второе число
+   * @returns {number} - произведение чисел `a` * `b`
+   */
   function getMultiplied(a, b) {
     return a * b;
   }
 
-  // Получаем деление чисел `a` и `b`.
+
+  /**
+   * @function Получаем деление чисел
+   * @param {number} a - первое число
+   * @param {number} b - второе число
+   * @returns {number} - Получаем деление чисел  `a` и `b`
+   */
   function getDivision(a, b) {
     return a / b;
   }
