@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Homework-04 task 1</title>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Необходимо данное задание выполнить в es5 стиле и в es6 стиле.
+Необходимо создать функцию-конструктор/класс для продукта.
+Названия: `ProductES5` для es5 стиля, `ProductES6` для es6 стиля.
+При создании объекта от функции-конструктора/класса необходимо передавать имя
+и цену товара, эта информация должна быть сохранена в объекте.
+Также у объекта должна быть возможность выполнить метод `make25Discount`, данный
+метод должен уменьшать стоимость продукта на 25%.
+Необходимо продемонстрировать работу с объектом (в свободной форме).
+-->
+<script>
+  'use strict';
+
+  function ProductES5(name, cost) {
+    this.name = name;
+    this.cost = cost;
+  }
+
+  ProductES5.prototype.make25Discount = function () {
+    this.cost *= .75;
+  };
+
+  const prodES5 = new ProductES5('"Вишня в собственном соку"', '300');
+  console.log(`Цена продукта ${prodES5.name} со скидкой ${prodES5.cost}р.`);
+
+  prodES5.make25Discount();
+  console.log(`Цена со скидкой ${prodES5.name} со скидкой ${prodES5.cost}р.`);
+
+
+
+  class ProductES6 {
+    constructor(name, cost) {
+      this.name = name;
+      this.cost = cost;
+    }
+
+    make25Discount() {
+      this.cost *= .75;
+    }
+  }
+
+  const prodES6 = new ProductES6('"Питайя"', '300');
+  console.log(`Цена продукта ${prodES6.name} ${prodES6.cost}₽`);
+
+  prodES6.make25Discount();
+  console.log(`Цена со скидкой ${prodES6.name} ${prodES6.cost}₽`);
+
+
+  /*
+  Как же приятно на классах писать, тут все так понятно...
+
+
+  То есть реальность такова, что на продакшине в большинстве случаев будет старый код, где без
+  мощных мозгов не разобраться...
+
+  А вот код, в котором мне нужно было разбраться в пятницу, и подправить...
+
+
+(function (window) {
+  if (window.PhoneConfirm)
+    return;
+
+
+   // Блок подтверждения номера телефона
+   // @param {string} selector              Контейнер, содержащий поле с телефоном
+   // @param {string} submitFormBtnSelector Кнопка отправки
+   // @param {array} confirmedPhones       Список подтвержденных номеров
+
+  window.PhoneConfirm = function (selector, submitFormBtnSelector, confirmedPhones) {
+    this.confirmedPhones = confirmedPhones;
+    this.codeSentTo = null;
+
+    this.loading = false;
+    this.loader = document.querySelector('.spinner-block');
+
+    this.submitFormBtn = document.querySelector(submitFormBtnSelector)
+
+    this.init(selector);
+  }
+
+  window.PhoneConfirm.prototype = {
+    init: function (selector) {
+      var input = BX.findChild(BX(selector), {className: 'js-phone'}, false, false);
+
+      this.dom = {
+        phoneInput: input,
+        sendCodeBtn: BX.create('BUTTON', {
+          props: {
+            className: 'g-basket-check__get btn-secondary btn',
+            disabled: !this.isPhoneValid(input.value)
+          },
+          children: [
+            BX.create('SPAN', {
+              props: {className: 'btn-text'},
+              text: 'Получить код'
+            }),
+          ],
+          events: {
+            click: this.sendPhoneCode.bind(this)
+          }
+
+        ...
+   */
+</script>
+</body>
+</html>
