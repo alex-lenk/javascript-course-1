@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<script>
+  'use strict';
+
+  const person = new Object({
+    name: 'Alex',
+    age: '35',
+    greet: function () {
+      console.log('Greet func')
+    }
+  })
+
+  Object.prototype.sayHi = function () {
+    console.log('Hi')
+  }
+
+  const lena = Object.create(person)
+  lena.name = 'lena'
+
+  const str = new String('String')
+
+  console.log(lena.name)
+</script>
+</body>
+</html>
